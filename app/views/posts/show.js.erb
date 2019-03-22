@@ -1,0 +1,2 @@
+$('#exampleModal').modal('show');
+$('.modal-body').html('<%@post.comments.each do |comment|%><%= comment.content%> <a href>x</a><br><%end%>');

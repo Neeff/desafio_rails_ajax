@@ -1,0 +1,6 @@
+<%= form_with(url: post_comment_path(@post), scope: :comment) do |f| %>
+        <%= f.label :Content%>
+        <%= f.text_area :content %>
+        <%= f.submit class: 'btn btn-success'%>
+
+<% end %>

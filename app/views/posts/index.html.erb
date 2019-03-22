@@ -1,0 +1,42 @@
+        <%= render  "form", post: @post  %>
+        <div class="col col-md-8">
+                <div class="contenedor">
+                 <label for="">Buscar Post</label>
+                 <input type="text" name="" id="search" class="form-control">
+                <table class="table">
+                                <thead>
+                                        <tr>
+                                        <th scope="col">Title</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nº Commentarios</th>
+                                        </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                        
+                                          <%= render  @posts  %>
+                                </tbody>
+                                </thead>
+                                </table>
+                                <%= render  "modal" %>
+                                
+                </div>
+        </div>
+</div>
+
+
+  <script>
+                  $('#search').keyup(function(){
+                    $.ajax({
+                      type: "GET",
+                      url: "<%= search_posts_path%>",
+                      data: {search: $('#search').val()},
+                      success: function (response) {
+
+                      }
+                });
+                  });
+                </script>
+

@@ -1,0 +1,13 @@
+<div class="row">
+                <div class="col col-md-4">
+                        <%= form_with(model: post) do |f| %>
+                                <%= f.label :Title%>
+                                <%= f.text_field :title, class: 'form-control' %>
+                                <%= f.hidden_field :user_id, value: current_user.id %>
+                                <%= f.file_field :image %>
+                                <%= f.submit class: 'btn btn-success'%>
+                        
+                        <% end %>
+        
+        
+                </div>

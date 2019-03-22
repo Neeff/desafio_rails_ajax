@@ -1,0 +1,9 @@
+<tr id="<%= post.id%>">
+        <td><%= post.title%></td>
+        <td><%= image_tag(post.image.variant(resize: '200x200')) %></td>
+        <td><%= link_to  "show", post_path(post), data: {remote: true } %></td>
+        <td><%= link_to  "Edit", edit_post_path(post), data:{ remote: true }%></td>
+        <td><%= link_to  "Delete",post_path(post), method: :delete, data:{ remote: true } %></td>
+        <td><%= link_to  "Comment", post_comment_path(post), data: { remote: true } %></td>
+        <td id="contador"><span class="badge badge-success"><%= post.comments.count%></span></td>
+</tr>
